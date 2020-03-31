@@ -53,11 +53,13 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main() {
-    val answer = angleInRadian(36, 14, 35)
+    val answer = quadraticEquationRoot(1.0, -3.0, 2.0)
+    println(answer)
+    val answer1 = angleInRadian(36, 14, 35)
   //val answer =  quadraticEquationRoot(1.0, -3.0, 2.0)
-    println("%.5f".format(answer))
-    val answer1 = thirdDigit(3801)
-     println(answer1)
+    println("%.5f".format(answer1))
+    val answer2 = thirdDigit(3801)
+     println(answer2)
 }
 class Tests {
 @Test
