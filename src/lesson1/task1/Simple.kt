@@ -61,6 +61,7 @@ fun main() {
     println(answer2)
     println( seconds(8, 20, 35).toString())
     println("%.2f".format(lengthInMeters(8,2,11)))
+    println(numberRevert(478).toString())
 
 }
 class Tests {
@@ -150,4 +151,5 @@ fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
  * Пользователь задает целое трехзначное число (например, 478).
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
-fun numberRevert(number: Int): Int = TODO()
+fun numberRevert(number: Int): Int =
+    (number%10)*100 +((number/10)%10)*10 + (number/100)%10
