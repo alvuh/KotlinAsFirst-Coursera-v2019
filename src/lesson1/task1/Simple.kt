@@ -2,7 +2,11 @@
 
 package lesson1.task1
 
+import org.junit.Assert.assertEquals
+import org.junit.Test
 import kotlin.math.*
+
+
 
 /**
  * Пример
@@ -49,9 +53,19 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main() {
-    val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
-    println("Root product: $x1x2")
+    val answer = angleInRadian(36, 14, 35)
+  //val answer =  quadraticEquationRoot(1.0, -3.0, 2.0)
+    println("%.5f".format(answer))
+    val answer1 = thirdDigit(4588500)
+     println(answer1)
 }
+class Tests {
+@Test
+        fun quadraticEquationRoot() {
+            assertEquals(2.0, quadraticEquationRoot(1.0, -3.0, 2.0), 1e-13)
+        }
+}
+
 
 /**
  * Тривиальная
@@ -76,7 +90,9 @@ fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
  * Пользователь задает угол в градусах, минутах и секундах (например, 36 градусов 14 минут 35 секунд).
  * Вывести значение того же угла в радианах (например, 0.63256).
  */
-fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
+fun angleInRadian(deg: Int, min: Int, sec: Int): Double =
+    (deg*PI/180)+((min*PI)/(180*60))+((sec* PI)/(180*60*60))
+
 
 /**
  * Тривиальная
@@ -92,7 +108,8 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
  * Пользователь задает целое число, большее 100 (например, 3801).
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
-fun thirdDigit(number: Int): Int = TODO()
+fun thirdDigit(number: Int): Int =
+    (((number/1000.00) - (number/1000)) * 10).toInt()
 
 /**
  * Простая
