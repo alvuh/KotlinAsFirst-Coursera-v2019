@@ -59,6 +59,9 @@ fun main() {
     println("%.5f".format(answer1))
     val answer2 = thirdDigit(3801)
     println(answer2)
+    println( seconds(8, 20, 35).toString())
+    println("%.2f".format(lengthInMeters(8,2,11)))
+
 }
 class Tests {
 @Test
@@ -82,7 +85,8 @@ class Tests {
  * Пользователь задает время в часах, минутах и секундах, например, 8:20:35.
  * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
  */
-fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
+fun seconds(hours: Int, minutes: Int, seconds: Int): Int =
+    (hours*60*60) + (minutes * 60) + seconds
 
 /**
  * Тривиальная
@@ -91,7 +95,8 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
  * Определить длину того же отрезка в метрах (в данном случае 18.98).
  * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
  */
-fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
+fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double =
+    ((((sagenes*48) + (arshins*16) + vershoks)*4.445)/100)
 
 /**
  * Тривиальная
@@ -118,7 +123,7 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
 fun thirdDigit(number: Int): Int =
-    (((number/1000.00) - (number/1000)) * 10).toInt()
+    (((number%1000))/100)
 
 /**
  * Простая
@@ -128,6 +133,7 @@ fun thirdDigit(number: Int): Int =
  * Определите время поезда в пути в минутах (в данном случае 216).
  */
 fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int = TODO()
+
 
 /**
  * Простая
