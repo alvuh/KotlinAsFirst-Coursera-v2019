@@ -56,7 +56,7 @@ fun main() {
     val answer = angleInRadian(36, 14, 35)
   //val answer =  quadraticEquationRoot(1.0, -3.0, 2.0)
     println("%.5f".format(answer))
-    val answer1 = thirdDigit(4588500)
+    val answer1 = thirdDigit(3801)
      println(answer1)
 }
 class Tests {
@@ -64,6 +64,14 @@ class Tests {
         fun quadraticEquationRoot() {
             assertEquals(2.0, quadraticEquationRoot(1.0, -3.0, 2.0), 1e-13)
         }
+@Test
+    fun angleInRadian() {
+        assertEquals(0.63256, angleInRadian(36, 14, 35), 1e-5)
+    }
+@Test
+    fun thirdDigit() {
+    assertEquals(8,  thirdDigit(3801))
+}
 }
 
 
