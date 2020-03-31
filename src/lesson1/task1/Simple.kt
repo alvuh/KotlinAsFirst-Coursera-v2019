@@ -61,9 +61,9 @@ fun main() {
 }
 class Tests {
 @Test
-        fun quadraticEquationRoot() {
-            assertEquals(2.0, quadraticEquationRoot(1.0, -3.0, 2.0), 1e-13)
-        }
+    fun quadraticEquationRoot() {
+         assertEquals(2.0, quadraticEquationRoot(1.0, -3.0, 2.0), 1e-13)
+    }
 @Test
     fun angleInRadian() {
         assertEquals(0.63256, angleInRadian(36, 14, 35), 1e-5)
@@ -71,7 +71,7 @@ class Tests {
 @Test
     fun thirdDigit() {
     assertEquals(8,  thirdDigit(3801))
-}
+    }
 }
 
 
