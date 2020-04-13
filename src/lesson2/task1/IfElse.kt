@@ -20,6 +20,11 @@ fun quadraticRootNumber(a: Double, b: Double, c: Double): Int {
     }
 }
 
+fun main() {
+    println(ageDescription(24))
+    println("%.2f".format(timeForHalfWay(10.0,5.0,3.0,4.0,8.0,5.0)))
+}
+
 /**
  * Пример
  *
@@ -63,7 +68,16 @@ fun minBiRoot(a: Double, b: Double, c: Double): Double {
  * Мой возраст. Для заданного 0 < n < 200, рассматриваемого как возраст человека,
  * вернуть строку вида: «21 год», «32 года», «12 лет».
  */
-fun ageDescription(age: Int): String = TODO()
+fun ageDescription(age: Int): String =
+    when  {
+        age in (5..20) ||  age in (105..120) -> "$age лет"
+        (age%10) == 1 -> "$age год"
+        (age%10) in (2..4) -> "$age года"
+        (age%10) in (5..9) -> "$age лет"
+        else -> "none"
+    }
+
+
 
 /**
  * Простая
@@ -76,8 +90,18 @@ fun timeForHalfWay(
     t1: Double, v1: Double,
     t2: Double, v2: Double,
     t3: Double, v3: Double
-): Double = TODO()
-
+): Double {
+    val s1 = t1 * v1
+    val s2 = t2 * v2
+    val s3 = t3 * v3
+    val sHalf = (s1 + s2 + s3) / 2
+    val result: Double = when {
+        (sHalf - s1) < 0.0 -> (s1 -(s1 - sHalf)) / v1
+        (sHalf - s1) == 0.0 -> s1 / v1
+        else -> (s1/v1)+((sHalf - s1) / v2)
+    }
+    return result
+}
 /**
  * Простая
  *
